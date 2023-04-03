@@ -1,0 +1,15 @@
+.Layout {
+  height: 100vh;
+  width: 100vw;
+  // overflow: hidden;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 14.375rem 1fr;
+}
+
+@media (max-width: 428px) {
+  .Layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5.1875rem 1fr;
+  }
+}
