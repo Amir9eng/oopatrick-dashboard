@@ -65,10 +65,10 @@ const Home = () => {
 
         <main className="bg-[#131313] rounded-xl space-y-4">
           <div className="flex-col px-4 py-3 justify-between md:flex-row md:flex bg-[#32393C33]">
-            <aside className="flex bg-[#32393C33]">
+            <aside className="flex bg-[#32393C33] rounded-xl">
               <div className="pl-10 py-2">
                 <p className="pt-4 text-2xl">My Wallet</p>
-                <div className="mt-12 flex-col gap-x-10 space-y-6">
+                <div className="mt-12 flex-col gap-x-10 space-y-4 text-sm">
                   <div className="flex items-center">
                     <span className="w-2.5 h-2.5 bg-[#FF8B00] rounded-full"></span>
                     <h2 className="pl-2">BTC</h2>
@@ -95,8 +95,8 @@ const Home = () => {
                 <Chart />
               </div>
             </aside>
-            <aside className="rounded-lg">
-              <table className="w-[39.375rem] bg-[#32393C33]">
+            <aside>
+              <table className="w-[39.375rem] bg-[#32393C33] rounded-xl">
                 <tr className="border-b-[#2C2C2C] border-solid border-b-[1px] text-white/80">
                   <th className="py-4">Exchange Wallet</th>
                   <th>Coin</th>
