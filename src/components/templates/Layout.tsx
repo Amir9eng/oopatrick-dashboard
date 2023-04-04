@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './Layout.scss';
-import SideBar from '../molecules/SideBar';
+import SideBar from '../molecules/SideBar/SideBar';
 
 interface Props {
   children?: React.ReactNode;

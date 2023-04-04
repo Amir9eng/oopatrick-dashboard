@@ -63,156 +63,158 @@ const Home = () => {
           <p>Martinez George</p>
         </div>
 
-        <div className="flex-col px-4 justify-between md:flex-row md:flex">
-          <aside className="flex bg-[#32393C33]">
-            <div className="pl-10">
-              <p className="pt-6 text-2xl">My Wallet</p>
-              <div className="mt-24 flex-col gap-x-10 space-y-6">
-                <div className="flex items-center">
-                  <span className="w-2.5 h-2.5 bg-[#FF8B00] rounded-full"></span>
-                  <h2> BTC</h2>
-                  <p className="text-white/60"> 36.77%</p>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2.5 h-2.5 bg-[#0019F8] rounded-full"></span>
-                  <h2> USDT</h2>
-                  <p className="text-white/60"> 36.77%</p>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2.5 h-2.5 bg-[#D00BF0] rounded-full"></span>
-                  <h2> Others</h2>
-                  <p className="text-white/60"> 36.77%</p>
-                </div>
-                <div className="flex items-center">
-                  <span className="w-2.5 h-2.5 bg-[#00B6FF] rounded-full"></span>
-                  <h2> BNB</h2>
-                  <p className="text-white/60"> 36.77%</p>
-                </div>
-              </div>
-            </div>
-            <div className="mt-12">
-              <Chart />
-            </div>
-          </aside>
-          <aside className="">
-            <table className="w-[39.375rem] h-[17.3125rem] bg-[#32393C33]">
-              <tr className="border-b-[#2C2C2C] border-solid border-b-[1px] text-white/80">
-                <th>Exchange Wallet</th>
-                <th>Coin</th>
-                <th>Balance</th>
-              </tr>
-              {data.map((val, key) => {
-                return (
-                  <tr
-                    key={key}
-                    className="border-b-[#2C2C2C] border-solid border-b-[1px] text-[#FFFFFF] text-center"
-                  >
-                    <td>{val.name}</td>
-                    <td>{val.coin}</td>
-                    <td>{val.balance}</td>
-                  </tr>
-                );
-              })}
-            </table>
-          </aside>
-        </div>
-        <div className="px-12">
-          <h2 className="mt-8">Signal Groups</h2>
-          <div className="my-6 flex justify-between">
-            <div>
-              <button className="text-white/80 bg-[#FFFFFF14] py-4 px-2 rounded-xl">
-                Groups You Manage
-              </button>
-              <button className="text-[#FFFFFF66] pl-4">
-                Other Signal Groups
-              </button>
-            </div>
-            <a href="/" className="text-[#00B6FF]">
-              Create New Signal Group
-            </a>
-          </div>
-          <div className="flex">
-            <aside className="border-[1px] border-solid border-[#2c2c2c]">
-              <p className="border-b-[1px] border-solid border-b-[#2C2C2C]">
-                Signal Groups You Belong To
-              </p>
-              {Groups.map((val, key) => {
-                return (
-                  <div
-                    key={key}
-                    className="flex space-x-2 border-b-[1px] border-solid border-b-[#2C2C2C]"
-                  >
-                    <img src={val.icon} alt="" />
-                    <p>{val.name}</p>
+        <main className="bg-[#131313] rounded-xl">
+          <div className="flex-col px-4 justify-between md:flex-row md:flex bg-[#32393C33]">
+            <aside className="flex bg-[#32393C33]">
+              <div className="pl-10">
+                <p className="pt-6 text-2xl">My Wallet</p>
+                <div className="mt-24 flex-col gap-x-10 space-y-6">
+                  <div className="flex items-center">
+                    <span className="w-2.5 h-2.5 bg-[#FF8B00] rounded-full"></span>
+                    <h2> BTC</h2>
+                    <p className="text-white/60"> 36.77%</p>
                   </div>
-                );
-              })}
-            </aside>
-            <aside>
-              <div className="flex">
-                <div className="flex justify-between">
-                  {' '}
-                  <img src={Groups[0].icon} alt="" />
-                  <p>{Groups[0].name}</p>
-                </div>
-                <a href="#" className="text-[#00B6FF]">
-                  Edit Signal Group
-                </a>
-              </div>
-              <p className="text-white/80 text-sm">Private Group</p>
-              <div>
-                <p className="text-white/80">Minimum Allocation</p>
-                <h2 className="text-lg">100 USDT</h2>
-              </div>
-              <div>
-                <p className="text-white/80">Maximum Allocation</p>
-                <h2 className="text-lg">1000 USDT</h2>
-              </div>
-              <div className="flex">
-                <p>Subscription</p>
-                <a href="#" className="text-[#00B6FF]">
-                  Free
-                </a>
-              </div>
-              <p>Total Revenue Generated</p>
-              <div className="flex">
-                <p>This Month</p>
-                <h2>$1000.00</h2>
-              </div>
-              <button className="border-solid border-[#00B6FF] border-[1px] text-[#00B6FF] text-sm rounded-xl px-2 py-2">
-                View Signal Group
-              </button>
-            </aside>
-            <aside>
-              <p>Memberships</p>
-              <button className="border-solid border-[#00B6FF] border-[1px] text-[#00B6FF] text-sm rounded-xl px-2 py-2">
-                Invite Members
-              </button>
-              <div className="flex">
-                <aside>
-                  <p>Members</p>
-                  <h2>78</h2>
-                </aside>
-                <aside>
-                  <p>Connection Request</p>
-                  <h2>78</h2>
-                </aside>
-              </div>
-              <div>
-                <p className="border-b-[1px] border-solid border-b-[#2C2C2C]">
-                  Active Member Emails
-                </p>
-                <div>
-                  {emails.map((email) => (
-                    <p className="border-b-[1px] border-solid border-b-[#2C2C2C]">
-                      {email.name}
-                    </p>
-                  ))}
+                  <div className="flex items-center">
+                    <span className="w-2.5 h-2.5 bg-[#0019F8] rounded-full"></span>
+                    <h2> USDT</h2>
+                    <p className="text-white/60"> 36.77%</p>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2.5 h-2.5 bg-[#D00BF0] rounded-full"></span>
+                    <h2> Others</h2>
+                    <p className="text-white/60"> 36.77%</p>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2.5 h-2.5 bg-[#00B6FF] rounded-full"></span>
+                    <h2> BNB</h2>
+                    <p className="text-white/60"> 36.77%</p>
+                  </div>
                 </div>
               </div>
+              <div className="mt-12">
+                <Chart />
+              </div>
+            </aside>
+            <aside className="">
+              <table className="w-[39.375rem] h-[17.3125rem] bg-[#32393C33]">
+                <tr className="border-b-[#2C2C2C] border-solid border-b-[1px] text-white/80">
+                  <th>Exchange Wallet</th>
+                  <th>Coin</th>
+                  <th>Balance</th>
+                </tr>
+                {data.map((val, key) => {
+                  return (
+                    <tr
+                      key={key}
+                      className="border-b-[#2C2C2C] border-solid border-b-[1px] text-[#FFFFFF] text-center"
+                    >
+                      <td>{val.name}</td>
+                      <td>{val.coin}</td>
+                      <td>{val.balance}</td>
+                    </tr>
+                  );
+                })}
+              </table>
             </aside>
           </div>
-        </div>
+          <div className="px-12 bg-[#32393C33] rounded-xl py-2">
+            <h2 className="mt-8">Signal Groups</h2>
+            <div className="my-6 flex justify-between">
+              <div>
+                <button className="text-white/80 bg-[#FFFFFF14] py-4 px-2 rounded-xl">
+                  Groups You Manage
+                </button>
+                <button className="text-[#FFFFFF66] pl-4">
+                  Other Signal Groups
+                </button>
+              </div>
+              <a href="/" className="text-[#00B6FF]">
+                Create New Signal Group
+              </a>
+            </div>
+            <div className="grid grid-cols-3 gap-x-6">
+              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-2 px-4">
+                <p className="border-b-[1px] border-solid border-b-[#2C2C2C] py-2 text-lg">
+                  Signal Groups You Belong To
+                </p>
+                {Groups.map((val, key) => {
+                  return (
+                    <div
+                      key={key}
+                      className="flex space-x-2 border-b-[1px] border-solid border-b-[#2C2C2C] py-3"
+                    >
+                      <img src={val.icon} alt="" />
+                      <p>{val.name}</p>
+                    </div>
+                  );
+                })}
+              </aside>
+              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-6 px-4">
+                <div className="flex justify-between">
+                  <div className="flex">
+                    {' '}
+                    <img src={Groups[0].icon} alt="" />
+                    <p>{Groups[0].name}</p>
+                  </div>
+                  <a href="#" className="text-[#00B6FF]">
+                    Edit Signal Group
+                  </a>
+                </div>
+                <p className="text-white/80 text-sm">Private Group</p>
+                <div className="py-4">
+                  <p className="text-white/80">Minimum Allocation</p>
+                  <h2 className="text-xl">100 USDT</h2>
+                </div>
+                <div className="py-4">
+                  <p className="text-white/80">Maximum Allocation</p>
+                  <h2 className="text-xl">1000 USDT</h2>
+                </div>
+                <div className="flex space-x-2">
+                  <p>Subscription</p>
+                  <a href="#" className="text-[#00B6FF] text-sm">
+                    Free
+                  </a>
+                </div>
+                <p className="text-sm py-3">Total Revenue Generated</p>
+                <div className="flex justify-between py-2">
+                  <p className="text-[#FFFFFFCC] text-sm">This Month</p>
+                  <h2 className="text-xl">$1000.00</h2>
+                </div>
+                <button className="border-solid border-[#00B6FF] border-[1px] text-[#00B6FF] text-sm rounded-xl px-2 py-2 my-3">
+                  View Signal Group
+                </button>
+              </aside>
+              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-2 px-4">
+                <p className="text-lg">Memberships</p>
+                <button className="border-solid border-[#00B6FF] border-[1px] text-[#00B6FF] text-sm rounded-xl px-2 py-2 my-4">
+                  Invite Members
+                </button>
+                <div className="flex justify-between">
+                  <aside>
+                    <p className="text-white/80">Members</p>
+                    <h2 className="my-3 text-2xl">78</h2>
+                  </aside>
+                  <aside>
+                    <p className="text-white/80">Connection Request</p>
+                    <h2 className="my-3 text-2xl">5</h2>
+                  </aside>
+                </div>
+                <div>
+                  <p className="border-b-[1px] border-solid border-b-[#2C2C2C] text-lg py-2">
+                    Active Member Emails
+                  </p>
+                  <div>
+                    {emails.map((email) => (
+                      <p className="border-b-[1px] border-solid border-b-[#2C2C2C] py-2">
+                        {email.name}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </main>
       </section>
     </Layout>
   );
