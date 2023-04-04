@@ -8,6 +8,7 @@ import NotificationIcon from '../../atoms/assets/NotificationIcon';
 import BotsIcon from '../../atoms/assets/Botsicon';
 import SignalIcon from '../../atoms/assets/SignalIcon';
 import { useState } from 'react';
+import DarkIcon from '../../atoms/assets/DarkIcon';
 
 const firstDiv = [
   {
@@ -42,6 +43,8 @@ const second = [
 
 const SideBar = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [activeLink, setActiveLink] = useState(1);
+  const [active, setActive] = useState(0);
   return (
     <div className="bg-[#131313]">
       <aside className="pl-10 pt-6 h-[5.6875rem] border-b-[1px] border-solid border-[#2C2C2C]">
@@ -66,15 +69,26 @@ const SideBar = () => {
       </div>
       <div className="generic home text-white/40">
         {second.map((item, index) => (
-          <NavLink key={index} className="flex gap-x-4" to="/">
-            <item.icon />
+          <NavLink
+            key={index}
+            className={`flex gap-x-4 ${
+              index === activeLink && 'text-[#00B6FF]'
+            }`}
+            onClick={() => setActiveLink(index)}
+            to="/"
+          >
+            <item.icon color={index === activeLink ? '#00B6FF' : undefined} />
             <p>{item.name}</p>
           </NavLink>
         ))}
       </div>
       <div>
-        <NavLink className="flex gap-x-4 text-white/40 pt-8 pl-10" to="/">
-          <img src="/src/components/atoms/assets/dark.svg" alt="" />
+        <NavLink
+          onClick={() => setActive(0)}
+          className="flex gap-x-4 text-white/40 pt-8 pl-10"
+          to="/"
+        >
+          <DarkIcon />
           <p>Dark Mode</p>
         </NavLink>
       </div>

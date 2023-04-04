@@ -42,7 +42,10 @@ const Chart = () => {
     },
   };
   return (
-    <div id="chart">
+    <div
+      id="chart"
+      className="border-solid rounded-full border-2 border-[#00B6FF33]"
+    >
       <ReactApexChart
         options={state.options}
         series={state.series}

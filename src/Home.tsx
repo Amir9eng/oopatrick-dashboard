@@ -63,31 +63,31 @@ const Home = () => {
           <p>Martinez George</p>
         </div>
 
-        <main className="bg-[#131313] rounded-xl">
-          <div className="flex-col px-4 justify-between md:flex-row md:flex bg-[#32393C33]">
+        <main className="bg-[#131313] rounded-xl space-y-4">
+          <div className="flex-col px-4 py-3 justify-between md:flex-row md:flex bg-[#32393C33]">
             <aside className="flex bg-[#32393C33]">
-              <div className="pl-10">
-                <p className="pt-6 text-2xl">My Wallet</p>
-                <div className="mt-24 flex-col gap-x-10 space-y-6">
+              <div className="pl-10 py-2">
+                <p className="pt-4 text-2xl">My Wallet</p>
+                <div className="mt-12 flex-col gap-x-10 space-y-6">
                   <div className="flex items-center">
                     <span className="w-2.5 h-2.5 bg-[#FF8B00] rounded-full"></span>
-                    <h2> BTC</h2>
-                    <p className="text-white/60"> 36.77%</p>
+                    <h2 className="pl-2">BTC</h2>
+                    <p className="text-white/60 pl-1"> 36.77%</p>
                   </div>
                   <div className="flex items-center">
                     <span className="w-2.5 h-2.5 bg-[#0019F8] rounded-full"></span>
-                    <h2> USDT</h2>
-                    <p className="text-white/60"> 36.77%</p>
+                    <h2 className="pl-2"> USDT</h2>
+                    <p className="text-white/60 pl-1"> 36.77%</p>
                   </div>
                   <div className="flex items-center">
                     <span className="w-2.5 h-2.5 bg-[#D00BF0] rounded-full"></span>
-                    <h2> Others</h2>
-                    <p className="text-white/60"> 36.77%</p>
+                    <h2 className="pl-2"> Others</h2>
+                    <p className="text-white/60 pl-1"> 36.77%</p>
                   </div>
                   <div className="flex items-center">
                     <span className="w-2.5 h-2.5 bg-[#00B6FF] rounded-full"></span>
-                    <h2> BNB</h2>
-                    <p className="text-white/60"> 36.77%</p>
+                    <h2 className="pl-2"> BNB</h2>
+                    <p className="text-white/60 pl-1"> 36.77%</p>
                   </div>
                 </div>
               </div>
@@ -95,10 +95,10 @@ const Home = () => {
                 <Chart />
               </div>
             </aside>
-            <aside className="">
-              <table className="w-[39.375rem] h-[17.3125rem] bg-[#32393C33]">
+            <aside className="rounded-lg">
+              <table className="w-[39.375rem] bg-[#32393C33]">
                 <tr className="border-b-[#2C2C2C] border-solid border-b-[1px] text-white/80">
-                  <th>Exchange Wallet</th>
+                  <th className="py-4">Exchange Wallet</th>
                   <th>Coin</th>
                   <th>Balance</th>
                 </tr>
@@ -108,7 +108,7 @@ const Home = () => {
                       key={key}
                       className="border-b-[#2C2C2C] border-solid border-b-[1px] text-[#FFFFFF] text-center"
                     >
-                      <td>{val.name}</td>
+                      <td className="py-6">{val.name}</td>
                       <td>{val.coin}</td>
                       <td>{val.balance}</td>
                     </tr>
@@ -137,11 +137,13 @@ const Home = () => {
                 <p className="border-b-[1px] border-solid border-b-[#2C2C2C] py-2 text-lg">
                   Signal Groups You Belong To
                 </p>
-                {Groups.map((val, key) => {
+                {Groups.map((val, index) => {
                   return (
                     <div
-                      key={key}
-                      className="flex space-x-2 border-b-[1px] border-solid border-b-[#2C2C2C] py-3"
+                      key={index}
+                      className={`flex space-x-2 border-b-[1px] border-solid border-b-[#2C2C2C] py-3 ${
+                        index === Array.length - 1 && 'border-none'
+                      }`}
                     >
                       <img src={val.icon} alt="" />
                       <p>{val.name}</p>
@@ -204,8 +206,11 @@ const Home = () => {
                     Active Member Emails
                   </p>
                   <div>
-                    {emails.map((email) => (
-                      <p className="border-b-[1px] border-solid border-b-[#2C2C2C] py-2">
+                    {emails.map((email, index) => (
+                      <p
+                        className="border-b-[1px] border-solid border-b-[#2C2C2C] py-2"
+                        key={index}
+                      >
                         {email.name}
                       </p>
                     ))}
