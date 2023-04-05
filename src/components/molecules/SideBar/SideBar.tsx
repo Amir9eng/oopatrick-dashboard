@@ -1,14 +1,15 @@
 import './SideBar.scss';
 import { NavLink } from 'react-router-dom';
-import logo from '../../atoms/assets/logo.png';
-import DashIcon from '../../atoms/assets/DashIcon';
-import AnalyticsIcon from '../../atoms/assets/AnalyticsIcon';
-import PositionIcon from '../../atoms/assets/PositionIcon';
-import NotificationIcon from '../../atoms/assets/NotificationIcon';
-import BotsIcon from '../../atoms/assets/Botsicon';
-import SignalIcon from '../../atoms/assets/SignalIcon';
+// import logo from '/images/logo.png';
+
 import { useState } from 'react';
-import DarkIcon from '../../atoms/assets/DarkIcon';
+import DashIcon from '../../atoms/assets/public/images/DashIcon';
+import AnalyticsIcon from '../../atoms/assets/public/images/AnalyticsIcon';
+import PositionIcon from '../../atoms/assets/public/images/PositionIcon';
+import NotificationIcon from '../../atoms/assets/public/images/NotificationIcon';
+import BotsIcon from '../../atoms/assets/public/images/Botsicon';
+import SignalIcon from '../../atoms/assets/public/images/SignalIcon';
+import DarkIcon from '../../atoms/assets/public/images/DarkIcon';
 
 const firstDiv = [
   {
@@ -48,7 +49,11 @@ const SideBar = () => {
   return (
     <div className="bg-[#131313]">
       <aside className="pl-10 pt-6 h-[5.6875rem] border-b-[1px] border-solid border-[#2C2C2C]">
-        <img src={logo} alt="logo" className="w-[5.3125rem] h-[3.5rem]" />
+        <img
+          src="/images/logo.png"
+          alt="logo"
+          className="w-[5.3125rem] h-[3.5rem]"
+        />
       </aside>
       <div className="generic home text-white/40">
         {firstDiv.map((item, itemIndex) => (

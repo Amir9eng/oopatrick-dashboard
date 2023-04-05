@@ -10,27 +10,27 @@ const data = [
 
 const Groups = [
   {
-    icon: '/src/components/atoms/assets/abc.svg',
+    icon: '/images/abc.svg',
     name: 'ABC 15',
   },
   {
-    icon: '/src/components/atoms/assets/champion.svg',
+    icon: '/images/champion.svg',
     name: 'The Champions',
   },
   {
-    icon: '/src/components/atoms/assets/bloom.svg',
+    icon: '/images/bloom.svg',
     name: 'Bloom  Group',
   },
   {
-    icon: '/src/components/atoms/assets/sha.svg',
+    icon: '/images/sha.svg',
     name: 'SHA 145',
   },
   {
-    icon: '/src/components/atoms/assets/etda.svg',
+    icon: '/images/etda.svg',
     name: 'ETDA Gurus',
   },
   {
-    icon: '/src/components/atoms/assets/req.svg',
+    icon: '/images/req.svg',
     name: 'Req Group',
   },
 ];
@@ -55,11 +55,7 @@ const Home = () => {
     <Layout>
       <section>
         <div className="justify-end flex items-center h-24 pr-20 gap-x-2 bg-[#131313]">
-          <img
-            src="/src/components/atoms/assets/avatar.png"
-            className="h-10 w-10"
-            alt=""
-          />
+          <img src="/images/avatar.png" className="h-10 w-10" alt="" />
           <p>Martinez George</p>
         </div>
 
@@ -132,8 +128,8 @@ const Home = () => {
                 Create New Signal Group
               </a>
             </div>
-            <div className="grid grid-cols-3 gap-x-6">
-              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-2 px-4">
+            <div className="grid grid-cols-3 items-start gap-x-6">
+              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-8 px-4 h-[28.8125rem]">
                 <p className="border-b-[1px] border-solid border-b-[#2C2C2C] py-2 text-lg">
                   Signal Groups You Belong To
                 </p>
@@ -142,7 +138,7 @@ const Home = () => {
                     <div
                       key={index}
                       className={`flex space-x-2 border-b-[1px] border-solid border-b-[#2C2C2C] py-3 ${
-                        index === Array.length - 1 && 'border-none'
+                        index === Groups.length - 1 && 'border-none'
                       }`}
                     >
                       <img src={val.icon} alt="" />
@@ -151,8 +147,8 @@ const Home = () => {
                   );
                 })}
               </aside>
-              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-6 px-4">
-                <div className="flex justify-between">
+              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-8 px-4 h-[28.8125rem]">
+                <div className="flex justify-between mt-2">
                   <div className="flex">
                     {' '}
                     <img src={Groups[0].icon} alt="" />
@@ -182,11 +178,11 @@ const Home = () => {
                   <p className="text-[#FFFFFFCC] text-sm">This Month</p>
                   <h2 className="text-xl">$1000.00</h2>
                 </div>
-                <button className="border-solid border-[#00B6FF] border-[1px] text-[#00B6FF] text-sm rounded-xl px-2 py-2 my-3">
+                <button className="border-solid border-[#00B6FF] border-[1px] text-[#00B6FF] text-sm rounded-xl px-2 py-2 my-1">
                   View Signal Group
                 </button>
               </aside>
-              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-2 px-4">
+              <aside className="border-[1px] border-solid border-[#2c2c2c] rounded-xl py-2 px-4 h-[28.8125rem]">
                 <p className="text-lg">Memberships</p>
                 <button className="border-solid border-[#00B6FF] border-[1px] text-[#00B6FF] text-sm rounded-xl px-2 py-2 my-4">
                   Invite Members
@@ -208,7 +204,9 @@ const Home = () => {
                   <div>
                     {emails.map((email, index) => (
                       <p
-                        className="border-b-[1px] border-solid border-b-[#2C2C2C] py-2"
+                        className={`border-b-[1px] border-solid border-b-[#2C2C2C] py-3 ${
+                          index === emails.length - 1 && 'border-none'
+                        }`}
                         key={index}
                       >
                         {email.name}
